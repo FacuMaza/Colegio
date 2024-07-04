@@ -1,0 +1,33 @@
+{% extends 'appcolegio/padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+
+
+<div class="row">
+    {% csrf_token %}
+
+    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'cursoMateriaCreate' %}">Agregar nuevo</a>
+
+    {% for CursoMateria in CursoMaterias %}
+        
+        <div class="card" style="width: 18rem;" >
+
+           
+            <li>{{ CursoMateria.cursos }}</li>
+            <li>{{ CursoMateria.materia }}</li>
+            
+
+            
+            <a href="{% url 'cursoMateriaDetalle' %}" class="btn btn-primary">Ver</a>
+         
+        </div>
+        
+    {% endfor %}
+
+    
+</div>
+
+{% endblock contenidoQueCambia  %}

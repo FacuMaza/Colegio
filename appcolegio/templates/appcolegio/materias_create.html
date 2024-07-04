@@ -1,0 +1,26 @@
+{% extends 'appcolegio/padre.html' %}
+
+{% load static %}
+
+
+
+{% block contenidoQueCambia %}
+    
+
+
+<form method="POST">
+    {% csrf_token %}
+    <div>NOMBRE: {{ form.nombre }}</div>
+    <div>CODIGO: {{ form.codigo }}</div>
+    <div>PROFESOR: {{ form.profesor }}</div>
+
+
+    
+    <input type="submit" value="Enviar">
+
+</form>
+
+
+
+
+{% endblock contenidoQueCambia %}
